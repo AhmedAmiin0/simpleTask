@@ -1,11 +1,20 @@
 @media screen and (max-width: 600px) {
+  .card{
+    height: 100%;
+  }
   .box {
     padding: 40px 0;
     width: calc(100% - 30px);
-    gap: 140px;
+    justify-content: space-around;
+    height: 100%;
+    gap: 0;
   }
   .contentBox {
     gap: 40px;
+    flex: unset;
+  }
+  .imageBox{
+    flex: unset;
   }
   .card {
     margin-top: -10em;
@@ -17,3 +26,4 @@
     font-size: 32px;
   }
 }
+
