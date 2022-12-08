@@ -43,11 +43,12 @@ body {
 }
 
 .layout {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 2rem 0;
 }
 .card {
   display: flex;
@@ -151,16 +152,17 @@ body {
     align-items: center;
     gap: 10px;
   }
+  .paragraph {
+    text-align: center;
+    font-size: 16px;
+    max-width: 315px;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .layout {
     background: var(--background-color) no-repeat center center;
-  }
-  .paragraph {
-    text-align: center;
-    font-size: 16px;
-    max-width: 315px;
+    margin: 0;
   }
   .imageBox {
     height: 315px;
@@ -168,7 +170,7 @@ body {
     flex: unset;
   }
   .card {
-    padding:0px;
+    padding: 0px;
     background-color: transparent;
     width: 100%;
     height: 100%;

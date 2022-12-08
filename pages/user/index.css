@@ -1,5 +1,8 @@
 @media screen and (max-width: 600px) {
-  .card{
+  .layout {
+    height: 100vh;
+  }
+  .card {
     height: 100%;
   }
   .box {
@@ -13,10 +16,9 @@
     gap: 40px;
     flex: unset;
   }
-  .imageBox{
+  .imageBox {
     flex: unset;
   }
-  
   .headerAndSubHeaderBox {
     gap: 40px;
   }
@@ -24,4 +26,3 @@
     font-size: 32px;
   }
 }
-

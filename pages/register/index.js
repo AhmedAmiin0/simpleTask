@@ -76,6 +76,8 @@ function onChangeValidateInput(e) {
     removeError(name);
   }
 }
+
+
 // check confirm password
 function checkConfirmPassword(e) {
   const { name, value } = e.target;
@@ -126,6 +128,7 @@ const handleSubmit = async (e) => {
     console.log(err);
   }
 };
+
 
 $("#registerForm").addEventListener("submit", async (e) => handleSubmit(e));
 $("#username").addEventListener("change", onChangeValidateInput);

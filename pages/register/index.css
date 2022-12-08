@@ -34,12 +34,14 @@
     gap: 40px;
   }
   .imageBox {
-    max-width: 369px;
     flex: auto;
     height:  100%;
   }
   .box{
     padding: 40px 0;
+  }
+  .contentBox{
+    width: 100%;
   }
 }
 @media screen and (max-width: 600px) {
