@@ -7,6 +7,9 @@
     width: calc(100% - 30px);
     gap: 40px;
   }
+  .card{
+    padding: 40px 0;
+  }
   .contentBox {
     gap: 40px;
   }

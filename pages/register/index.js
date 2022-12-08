@@ -69,22 +69,22 @@ const handleSubmit = async (e) => {
 
 
   
-  localStorage.setItem("user", data.email);
-
-
-  // the url end point returns 304 status code and get blocked by the browser
-  // const response = await fetch(url, {
-  //   method: "POST",
-  //   body: JSON.stringify(data),
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //     "Access-Control-Allow-Origin": "*",
-  //   },
-  //   mode: "no-cors",
-  // });
-
-  // await response.json();
   
+  
+  // the url end point returns 304 status code and get blocked by the browser
+  const response = await fetch(url, {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+    },
+    mode: "no-cors",
+  });
+
+  await response.json();
+  
+  localStorage.setItem("user", data.email);
 
   window.location.href = window.location.pathname.replace("register", "user");
 };
