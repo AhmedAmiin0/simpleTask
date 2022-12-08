@@ -41,6 +41,7 @@
                     id="username"
                     name="username"
                     autocomplete="username"
+                    onchange="onChangeValidateInput(e)"
                   />
                 </label>
                 <p class="hide errorMessage"></p>
@@ -57,6 +58,7 @@
                     name="email"
                     type="email"
                     autocomplete="email"
+                    onchange="onChangeValidateInput(e)"
                   />
                 </label>
                 <p class="hide errorMessage"></p>
@@ -75,6 +77,8 @@
                     autocomplete="new-password"
                     name="password"
                     type="password"
+                    onchange="onChangeValidateInput(e)"
+
                   />
                 </label>
                 <p class="hide errorMessage"></p>
@@ -94,6 +98,8 @@
                     name="password_confirmation"
                     type="password"
                     autocomplete="new-password"
+                    onchange="onChangeValidateInput(e)"
+
                   />
                 </label>
                 <p class="hide errorMessage"></p>

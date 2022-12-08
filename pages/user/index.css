@@ -16,9 +16,7 @@
   .imageBox{
     flex: unset;
   }
-  .card {
-    margin-top: -6em;
-  }
+  
   .headerAndSubHeaderBox {
     gap: 40px;
   }
