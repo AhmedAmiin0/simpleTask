@@ -38,6 +38,9 @@
     flex: auto;
     height:  100%;
   }
+  .box{
+    padding: 40px 0;
+  }
 }
 @media screen and (max-width: 600px) {
   .header {
@@ -48,6 +51,7 @@
   }
   .box {
     gap: 40px;
+    padding:  0;
     width: 100%;
   }
   .imageBox {
