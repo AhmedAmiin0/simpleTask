@@ -18,7 +18,7 @@ const inputs = [
   },
   {
     name: "password",
-    message: "Password must be between 8",
+    message: "Password must be at least 8 characters",
     pattern: /^.{8,}$/,
     type: "password",
   },
