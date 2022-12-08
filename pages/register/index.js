@@ -1,5 +1,9 @@
 const $ = (el) => document.querySelector(el);
 const url = "https://goldblv.com/api/hiring/tasks/register";
+
+
+
+// validation rules for inputs
 const inputs = [
   {
     name: "username",
@@ -21,28 +25,21 @@ const inputs = [
     type: "password",
   },
   {
-    name: "confirm_password",
+    name: "password_confirmation",
     message: "Passwords do not match",
     pattern: /^.{8,}$/,
     type: "password",
   },
+
 ];
 
 
 
 
 
-
-
-
-
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  const form = e.target;
+// validate inputs function
+const validateInputs = (data) => {
   let error = [];
-  const formData = new FormData(form);
-  const data = Object.fromEntries(formData);
-
 
   inputs.forEach((input) => {
     const { name, message, pattern } = input;
@@ -57,35 +54,66 @@ const handleSubmit = async (e) => {
       error.push(true);
     }
   });
-  if (data.password !== data.confirm_password) {
+  if (data.password !== data.password_confirmation) {
     $(`label[for=password]`).classList.add("error");
     $(`#passwordContainer .errorMessage`).classList.remove("hide");
     $(`#passwordContainer .errorMessage`).textContent =
       "Passwords do not match";
     error.push(true);
   }
-  if (error.length > 0 && error.every((e) => e === true)) return;
+  if (error.length > 0 && error.every((e) => e === true)) return true;
 
-
-
-  
-  
-  
-  // the url end point returns 304 status code and get blocked by the browser
-  const response = await fetch(url, {
-    method: "POST",
-    body: JSON.stringify(data),
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-    },
-    mode: "no-cors",
-  });
-
-  await response.json();
-  
-  localStorage.setItem("user", data.email);
-
-  window.location.href = window.location.pathname.replace("register", "user");
+  return false;
 };
+
+
+
+
+// submit form function
+const handleSubmit = async (e) => {
+
+
+  e.preventDefault();
+  const form = e.target;
+  let apiError = false;
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData);
+
+  if (validateInputs(data)) return;
+
+  
+  try {
+
+    const response = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    });
+
+    const res = await response.json();
+    if (res.errors) {
+      // errors is object with key value pairs we need to loop through
+      const { errors } = res;
+      for (const [key, value] of Object.entries(errors)) {
+        $(`label[for=${key}]`).classList.add("error");
+        $(`#${key}Container .errorMessage`).classList.remove("hide");
+        $(`#${key}Container .errorMessage`).textContent = value[0];
+      }
+      apiError = true;
+    }
+
+    if (apiError) return;
+
+    localStorage.setItem("user", data.email);
+
+    window.location.href = window.location.pathname.replace("register", "user");
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+
 $("#registerForm").addEventListener("submit", async (e) => handleSubmit(e));
