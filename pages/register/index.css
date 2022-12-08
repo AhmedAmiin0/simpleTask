@@ -1,0 +1,76 @@
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.textfield {
+  display: flex;
+  background: var(--white);
+  color: var(--input-color);
+  border: 1px solid var(--input-border);
+  border-radius: 10px;
+  padding: 8px 20px;
+  align-items: center;
+}
+.textfield input {
+  width: calc(100% - 29px);
+  border-radius: 5px;
+  height: 44px;
+  background: none;
+  outline: none;
+  border: none;
+}
+.textfield .iconBox {
+  width: 29px;
+  height: 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+@media screen and (max-width: 992px) {
+  .header {
+    gap: 40px;
+  }
+  .imageBox {
+    max-width: 369px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .header {
+    font-size: 32px;
+  }
+  .layout {
+    height: 100%;
+  }
+  .box {
+    gap: 40px;
+    padding: 40px 0;
+    width: 100%;
+  }
+  .imageBox {
+    width: calc(100% - 30px);
+    flex: auto;
+    max-width: unset;
+  }
+  .contentBox {
+    width: calc(100% - 30px);
+    object-fit: contain;
+  }
+}
+.error {
+  border-color: red !important;
+}
+.errorMessage {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+.hide {
+  display: none;
+}
+.show{
+  display: block;
+}
+

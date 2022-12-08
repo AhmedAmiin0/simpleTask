@@ -1,0 +1,13 @@
+.header {
+  font-size: 56px;
+}
+@media screen and (max-width: 600px) {
+  .box {
+    padding: 40px 0;
+    width: calc(100% - 30px);
+    gap: 40px;
+  }
+  .contentBox {
+    gap: 40px;
+  }
+}

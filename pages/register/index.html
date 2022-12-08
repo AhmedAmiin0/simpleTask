@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/libs/normalize.css" />
+    <link rel="stylesheet" href="../../css/main.css" />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <div class="card">
+        <div class="box">
+          <img
+            src="../../assets/createAccountImage.png"
+            alt="create account image"
+            class="imageBox"
+          />
+          <div class="contentBox">
+            <div class="headerAndSubHeaderBox">
+              <h1 class="header">Create Account</h1>
+              <p class="paragraph">
+                Go ahead and sign up, let everyone know how awesome you are!
+              </p>
+            </div>
+            <form class="registerForm" id="registerForm">
+              <div id="usernameContainer">
+                <label for="username" class="textfield">
+                  <div class="iconBox">
+                    <img
+                      src="../../assets/usernameIcon.svg"
+                      alt="username icon"
+                    />
+                  </div>
+
+                  <input
+                    type="text"
+                    placeholder="Username"
+                    id="username"
+                    name="username"
+                    autocomplete="username"
+                  />
+                </label>
+                <p class="hide errorMessage"></p>
+              </div>
+              <div id="emailContainer">
+                <label for="email" class="textfield">
+                  <div class="iconBox">
+                    <img src="../../assets/emailIcon.svg" alt="Email icon" />
+                  </div>
+
+                  <input
+                    placeholder="Email"
+                    id="email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                  />
+                </label>
+                <p class="hide errorMessage"></p>
+              </div>
+              <div id="passwordContainer">
+                <label for="password" class="textfield">
+                  <div class="iconBox">
+                    <img
+                      src="../../assets/passwordIcon.svg"
+                      alt="Password icon"
+                    />
+                  </div>
+                  <input
+                    placeholder="Password"
+                    id="password"
+                    autocomplete="new-password"
+                    name="password"
+                    type="password"
+                  />
+                </label>
+                <p class="hide errorMessage"></p>
+              </div>
+              <div id="confirm_passwordContainer">
+                <label for="confirm_password" class="textfield">
+                  <div class="iconBox">
+                    <img
+                      src="../../assets/usernameIcon.svg"
+                      alt="Confirm Password icon"
+                    />
+                  </div>
+
+                  <input
+                    placeholder="Confirm Password"
+                    id="confirm_password"
+                    name="confirm_password"
+                    type="password"
+                    autocomplete="new-password"
+                  />
+                </label>
+                <p class="hide errorMessage"></p>
+              </div>
+              <button class="btn" type="submit">Create Account</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

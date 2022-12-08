@@ -1,0 +1,19 @@
+@media screen and (max-width: 600px) {
+  .box {
+    padding: 40px 0;
+    width: calc(100% - 30px);
+    gap: 140px;
+  }
+  .contentBox {
+    gap: 40px;
+  }
+  .card {
+    margin-top: -10em;
+  }
+  .headerAndSubHeaderBox {
+    gap: 40px;
+  }
+  .header {
+    font-size: 32px;
+  }
+}
