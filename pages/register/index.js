@@ -17,9 +17,7 @@ const inputs = [
   {
     name: "password",
     message: "Password must be between 8",
-
     pattern: /^.{8,}$/,
-
     type: "password",
   },
   {
@@ -30,12 +28,22 @@ const inputs = [
   },
 ];
 
+
+
+
+
+
+
+
+
 const handleSubmit = async (e) => {
   e.preventDefault();
   const form = e.target;
   let error = [];
   const formData = new FormData(form);
   const data = Object.fromEntries(formData);
+
+
   inputs.forEach((input) => {
     const { name, message, pattern } = input;
     $(`label[for=${name}]`).classList.remove("error");
@@ -58,6 +66,9 @@ const handleSubmit = async (e) => {
   }
   if (error.length > 0 && error.every((e) => e === true)) return;
 
+
+
+  
   localStorage.setItem("user", data.email);
 
 
@@ -74,6 +85,7 @@ const handleSubmit = async (e) => {
 
   // await response.json();
   
+
   window.location.href = window.location.pathname.replace("register", "user");
 };
 $("#registerForm").addEventListener("submit", async (e) => handleSubmit(e));
