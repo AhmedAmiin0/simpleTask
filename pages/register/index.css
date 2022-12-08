@@ -35,6 +35,8 @@
   }
   .imageBox {
     max-width: 369px;
+    flex: auto;
+    height:  100%;
   }
 }
 @media screen and (max-width: 600px) {
@@ -46,13 +48,13 @@
   }
   .box {
     gap: 40px;
-    padding: 40px 0;
     width: 100%;
   }
   .imageBox {
     width: calc(100% - 30px);
     flex: auto;
     max-width: unset;
+    height:  100%;
   }
   .contentBox {
     width: calc(100% - 30px);
@@ -70,7 +72,6 @@
 .hide {
   display: none;
 }
-.show{
+.show {
   display: block;
 }
-
